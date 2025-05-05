@@ -5,3 +5,13 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+function acceptCookies() {
+  localStorage.setItem('cookiesAccepted', 'true');
+  document.getElementById('cookie-popup').style.display = 'none';
+}
+
+window.onload = function() {
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-popup').style.display = 'block';
+  }
+};
